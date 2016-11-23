@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>@QG大笑的技术博客</title>
+		<link rel="shortcut icon" href="img/title_img.ico" type="image/x-icon">
+ 		<!--<link rel="icon" href="img/title_img.ico" type="image/x-icon">-->
+        <script src="js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap3.0.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="css/bootstrap2.0.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css"/>-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑";
+				list-style: none;
+				box-sizing: border-box;
+			}
+			body{
+				background-color: lightblue;
+			}
+			.navbar-nav li:hover{
+				background-color: #FCFFD6;
+				transition: 0.5s;
+			}
+			.navbar-inverse .navbar-nav li:hover a{
+				color: dimgrey;
+			}
+			#title_blog:hover{
+				color: lightblue; 
+				cursor: default;
+			}
+			.activeli{
+				background-color: #EBDF00;
+			}
+			.navbar-nav .activeli:hover{
+				background-color: #EBDF00;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 顶部导航 -->
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="menu-nav">
+		  <div class="container">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="border: none; background-color: lightblue;">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" id="title_blog" href="#" style="color: lightblue !important; font-weight: bolder; font-size: x-large;">文艺女程序员</a>
+		    </div>
+		
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="border-top: none;">
+		      <ul class="nav navbar-nav" id="navid">
+		        <li><a href="#">首页</a></li>
+		        <li><a href="#">H5</a></li>
+				<li><a href="#">前端</a></li>
+				<li><a href="#">JQuery Mobile</a></li>
+				<li><a href="#">框架</a></li>
+				<li><a href="#">面试题</a></li>		       
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		  </div>
+		</div>
+			
+		<div class="show show1">
+			    <div class="show_8">
+			    	<ul class="bigul">
+						<li><a href="#"><img src="img/ih5.png"/></a></li>
+						<li><a href="#"><img src="img/ih5.png"/></a></li>
+						<li><a href="#"><img src="img/ih5.png"/></a></li>
+						<li><a href="#"><img src="img/ih5.png"/></a></li>					
+					</ul>
+					<ul class="smallul">
+						<li><a href="#"><img src="img/ih5.png"/></a></li>
+						<li><a href="#"><img src="img/ih5.png"/></a></li>
+						<li><a href="#"><img src="img/ih5.png"/></a></li>
+						<li><a href="#"><img src="img/ih5.png"/></a></li>						
+					</ul>	
+					<div class="bg_border">
+						<img src="img/border.png"/>
+					</div>
+			    </div>
+			    <div class="show_4">.</div>
+		</div>	
+		<!--<div class="row">
+			    <div class="col-md-6" style="border: solid 1px red;">
+			    	6
+			    </div>
+			    <div class="col-md-3" style="border: solid 1px red;">
+			    	3
+			    </div>
+			    <div class="col-md-3" style=" border: solid 1px red;">
+			    	3
+			    </div>
+		</div>-->
+		
+		<script type="text/javascript">
+			$(function(){
+				
+				//默认active的li标签
+				$(".navbar-nav li:first-child").addClass("activeli"); 
+				
+				//导航栏的点击事件
+				$(".navbar-nav li").click(function(){
+					$(this).addClass("activeli");
+					$(this).siblings().removeClass("activeli");
+				});
+				
+				//导航栏的文字处理
+				$(".navbar-nav li").bind({
+		            mouseleave:function(){$(this).children().css("color","dimgray");}
+				});
+				
+				//首页show的左边距设置
+				var title_marginleft = parseFloat($("#title_blog").css("margin-left"));
+				var showleft = $("#title_blog").offset().left - title_marginleft;
+				//$(".show").css("left",showleft);
+				//首页show的右边距设置
+				var nav_left = $(".navbar-nav").offset().left;
+				var nav_lenght = $(".navbar-nav").width();
+				var window_length =  $(window).width();
+				var nav_right = parseFloat(window_length) - parseFloat(nav_left) - parseFloat(nav_lenght) - 200;
+				//$(".show").css("right",nav_right);
+				//小图片边框的长宽设置
+				var border_bg_width = $(".smallul").width();
+//				var border_bg_width2 = $(".smallul li").width();
+//				var border_bg_width3 = $(".smallul li img").width();
+				$(".bg_border").width(border_bg_width);
+				var border_bg_height = $(".smallul img").height();
+				$(".bg_border").height(border_bg_height);
+//				alert(border_bg_width+"  "+border_bg_width2+"  "+border_bg_width3)
+				//图片距离父元素的距离
+				var border_bg_top1 = $(".smallul li:first-child img").position().top;
+				var border_bg_top2 = $(".smallul li:nth-child(2) img").position().top;
+				var border_bg_top3 = $(".smallul li:nth-child(3) img").position().top;
+				var border_bg_top4 = $(".smallul li:nth-child(4) img").position().top;
+				var bbt = [border_bg_top1,border_bg_top2,border_bg_top3,border_bg_top4];
+				var oldtop = bbt[0];
+				
+				
+				
+//浏览器大小改变时的设置
+				$(window).resize(function(){
+										
+					showleft = $("#title_blog").offset().left - title_marginleft;
+					nav_right = parseFloat($(window).width()) - parseFloat($(".navbar-nav").offset().left) - parseFloat(nav_lenght - 200);
+					//$(".show").css("left",showleft);
+					//$(".show").css("right",nav_right);
+					border_bg_width = $(".smallul").width();
+					$(".bg_border").width(border_bg_width);
+					border_bg_height = $(".smallul img").height();
+					$(".bg_border").height(border_bg_height);
+					border_bg_top1 = $(".smallul li:first-child img").position().top;
+					border_bg_top2 = $(".smallul li:nth-child(2) img").position().top;
+					border_bg_top3 = $(".smallul li:nth-child(3) img").position().top;
+					border_bg_top4 = $(".smallul li:nth-child(4) img").position().top;
+					bbt = [border_bg_top1,border_bg_top2,border_bg_top3,border_bg_top4];
+//					alert(border_bg_top1);
+				})
+				
+				
+				var border_top = bbt[0];
+				var i = 0;
+				$(".bg_border").css("top",border_top);
+				function borderchange(){
+					i++;
+					if(i == 4){
+						i = 0;
+					}
+					border_top = bbt[i];
+					$(".bg_border").css("top",border_top);
+					if(oldtop!=bbt[0]){$(".bg_border").css("transition","0s"); oldtop = bbt[0]; }
+					else{$(".bg_border").css("transition","1s");}
+				}
+				var a = setInterval(borderchange,1500);
+			})
+		</script>
+	</body>
+</html>

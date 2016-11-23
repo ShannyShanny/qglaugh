@@ -1,0 +1,77 @@
+#menu-nav{
+	height: 50px;
+	background-color: yellow;
+	position: absolute;
+	top: 150px;
+	border: none;
+}
+.navbar-nav li a{
+	line-height: 50px;
+	font-size: 20px;
+}
+
+/*show1的样式*/
+.show{
+	position: absolute;
+	top: 220px;
+	border: solid 1px red;
+	width: 60%;
+	margin-left: 20%;
+}
+.show_8{
+	width: 66%;
+	display: inline-block;
+	/*border: solid 1px red;*/
+}
+.show_4{
+	width: 33%;
+	display: inline-block;
+	/*border: solid 1px red;*/
+}
+/*大图片ul*/
+.bigul{
+	float: left;
+	display: inline-block;
+	width: 80%;
+	margin: 0;
+}
+.bigul li,.bigul li {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+.bigul li:first-child{
+	display: block;
+}
+.bigul img{
+	width: 100%;
+	height: auto;
+}
+/*小图片ul*/
+.smallul{
+	float: right;
+	width: 16%;
+	height: 100%;	
+	/*border: solid 1px blue;*/
+}
+.smallul li{
+	width: 100%;
+	height: 25%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	padding-left: 5%;
+	/*border: 1px solid red;*/
+}
+.smallul img{
+	width: 100%;
+	height: 100%;
+}
+/*小图片边框*/
+.bg_border{
+	position: absolute;
+	right: 34%;
+}
+.bg_border img{
+	width: 100%;
+	height: 100%;
+}
